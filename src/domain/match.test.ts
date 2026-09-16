@@ -1,18 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { LimitOrder } from "./types.js";
 import { canCross, executionQuantity } from "./match.js";
-
-function makeLimitOrder(overrides: Partial<LimitOrder>): LimitOrder {
-  return {
-    id: "1",
-    type: "limit",
-    price: 100,
-    quantity: 10,
-    remainingQty: 10,
-    side: "buy",
-    ...overrides,
-  };
-}
+import { makeLimitOrder } from "./utils.js";
 
 describe("canCross", () => {
   it("does not cross when buy price is less than sell price", () => {
