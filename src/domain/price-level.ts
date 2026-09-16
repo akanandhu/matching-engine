@@ -1,0 +1,4 @@
+export class PriceLevel {
+    
+    constructor() {}
+}
